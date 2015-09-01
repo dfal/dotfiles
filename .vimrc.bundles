@@ -1,0 +1,33 @@
+if &compatible
+  set nocompatible
+end
+
+filetype off
+
+set rtp+=~/vimfiles/bundle/Vundle.vim/
+let path='~/vimfiles/bundle'
+call vundle#begin(path)
+
+" Let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
+
+" Define bundles via Github repos
+Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'tpope/vim-fugitive.git'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-surround'
+Plugin 'mattn/emmet-vim'	
+Plugin 'Raimondi/delimitMate'
+Plugin 'jelera/vim-javascript-syntax'
+Plugin 'fatih/vim-go'
+Plugin 'rust-lang/rust.vim'
+Plugin 'cespare/vim-toml'
+Plugin 'PProvost/vim-ps1'
+
+if filereadable(expand("~/.vimrc.bundles.local"))
+  source ~/.vimrc.bundles.local
+endif
+
+call vundle#end()
+filetype plugin indent on
