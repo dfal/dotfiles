@@ -128,3 +128,8 @@ map <F10> :NERDTreeToggle<CR>
 map <F9> :NERDTreeFind<CR>
 
 let g:neocomplete#enable_at_startup = 1
+
+" rust autocomplete
+set hidden
+let g:racer_cmd = "C:/RustWork/@racer/target/release/racer"
+let $RUST_SRC_PATH="C:/RustWork/@rust/src"
