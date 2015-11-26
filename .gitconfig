@@ -1,0 +1,26 @@
+[merge]
+	tool = BeyondCompare3
+[diff]
+	tool = kdiff3
+	guitool = beyondcompare3
+[core]
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = False
+[difftool "BeyondCompare3"]
+	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+[user]
+	name = Dmitry Fal
+	email = fal.dmitry@gmail.com
+[difftool "beyondcompare3"]
+	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "BeyondCompare3"]
+	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
+	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+[alias]
+	last = log -1 HEAD
+	cob = checkout -b
+	clearb = ! git branch | grep -v 'master' | xargs git branch -D
+	ex = !sh -c '\"C:\\Program Files (x86)\\GitExtensions\\GitExtensions.exe\" ''$@'' &'
+	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
