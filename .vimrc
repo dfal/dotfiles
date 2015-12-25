@@ -129,6 +129,11 @@ map <F10> :NERDTreeToggle<CR>
 map <F9> :NERDTreeFind<CR>
 
 let g:neocomplete#enable_at_startup = 1
+" <TAB>: completion
+inoremap <expr><TAB> pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backward char
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 
 " rust autocomplete
 set hidden
