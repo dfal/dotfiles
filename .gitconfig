@@ -24,3 +24,4 @@
 	ex = !sh -c '\"C:\\Program Files (x86)\\GitExtensions\\GitExtensions.exe\" ''$@'' &'
 	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
+	cloner = clone --recursive
