@@ -20,7 +20,7 @@
 [alias]
 	last = log -1 HEAD
 	cob = checkout -b
-	clearb = ! git branch | grep -v 'master' | xargs git branch -D
+	clearb = !git branch | grep -v 'master' | xargs -r git branch -D
 	ex = !sh -c '\"C:\\Program Files (x86)\\GitExtensions\\GitExtensions.exe\" ''$@'' &'
 	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
