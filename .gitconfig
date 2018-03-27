@@ -5,7 +5,7 @@
 	guitool = beyondcompare3
 [core]
 	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
-	autocrlf = False
+	autocrlf = false
 [difftool "BeyondCompare3"]
 	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
 [user]
@@ -19,7 +19,7 @@
 	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
 [alias]
 	last = log -1 HEAD
-	cob = "!git checkout -b $1 `git branch -r | grep -m 1 $1` #"
+	cob = "!git checkout -b $1 `git branch -r | grep -m 1 -w $1` #"
 	clearb = !git branch | grep -v 'master' | xargs -r git branch -D
 	ex = "!'C:\\Program Files (x86)\\GitExtensions\\GitExtensions.exe' $@ #"
 	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
