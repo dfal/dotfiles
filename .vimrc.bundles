@@ -4,8 +4,8 @@ end
 
 filetype off
 
-set rtp+=~/vimfiles/bundle/Vundle.vim/
-let path='~/vimfiles/bundle'
+set rtp+=~/.vim/bundle/Vundle.vim/
+let path='~/.vim/bundle'
 call vundle#begin(path)
 
 " Let Vundle manage Vundle
@@ -26,6 +26,7 @@ Plugin 'cespare/vim-toml'
 Plugin 'PProvost/vim-ps1'
 Plugin 'Shougo/neocomplete.vim'
 Plugin 'phildawes/racer'
+Plugin 'will133/vim-dirdiff'
 
 if filereadable(expand("~/.vimrc.bundles.local"))
   source ~/.vimrc.bundles.local
