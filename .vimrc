@@ -3,8 +3,6 @@ set noerrorbells visualbell t_vb=
 
 " Set language
 set langmenu=en_US.UTF-8
-"set encoding=utf-8
-"set fileencoding=utf-8
 if has("multi_byte")
   if &termencoding == ""
     let &termencoding = &encoding
@@ -15,6 +13,9 @@ if has("multi_byte")
   set fileencodings=ucs-bom,utf-8,latin1
 endif
 let $LANG = 'en_US.UTF-8'
+
+"Fix Backspace
+set backspace=indent,eol,start
 
 " Backup
 set backupdir=~/vimfiles/tmp,. " Backup files folder.
