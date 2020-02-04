@@ -1,8 +1,8 @@
 [merge]
-	tool = BeyondCompare3
+	tool = BeyondCompare4
 [diff]
 	tool = kdiff3
-	guitool = beyondcompare3
+	guitool = beyondcompare4
 [core]
 	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
 	autocrlf = false
@@ -25,3 +25,19 @@
 	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	cloner = clone --recursive
+[pull]
+	rebase = true
+[fetch]
+	prune = true
+[rebase]
+	autoStash = false
+[winUpdater]
+	recentlySeenVersion = 2.24.1.windows.2
+[uploadpack]
+	allowFilter = true
+[difftool "beyondcompare4"]
+	path = C:/Program Files/Beyond Compare 4/bcomp.exe
+	cmd = \"C:/Program Files/Beyond Compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+[mergetool "BeyondCompare4"]
+	path = C:/Program Files/Beyond Compare 4/bcomp.exe
+	cmd = \"C:/Program Files/Beyond Compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
