@@ -23,16 +23,16 @@ set directory=~/vimfiles/tmp,. " Swap files folder.
 
 " Store session
 "map <F2> :mksession! ~/vimfiles/tmp/vim_session <CR>	" Save session with F2
-"map <F3> :source ~/vimfiles/tmp/vim_session <CR>	" Load session with F3
+"map <F3> :source ~/vimfiles/tmp/vim_session <CR>		" Load session with F3
 
-" Editor 
+" Editor
 set shiftwidth=4	" Shift width.
-set tabstop=4		" Set tabsize.  
-set autoindent		" Copy indent from current line when starting a new line.  
+set tabstop=4		" Set tabsize.
+set autoindent		" Copy indent from current line when starting a new line.
 set smartindent		" Automatically inserts one extra level of indentation.
-set number		" Set line numbers.
-set relativenumber
-set ruler		" Show the cursor position all the time.
+set number			" Display line numbers.
+set relativenumber	" Display relative line numbers.
+set ruler			" Show the cursor position all the time.
 set laststatus=2	" Always display the status line
 
 " Search
@@ -43,7 +43,7 @@ set ignorecase smartcase
 set history=1000
 set noswapfile
 
-" Display extra whitespace
+" Display invisible characters
 set list listchars=tab:»·,trail:·,nbsp:·
 
 " Open new split panes to right and bottom, which feels more natural
@@ -87,7 +87,7 @@ nmap <CR> o<Esc>k
 " Scripts section
 " -----------------------------------------------------------------------------
 
-"====[ Show when lines extend past column 80 "]================================>-<=====================
+"====[ Show when lines extend past column 120 "]===============================
 
 highlight ColorColumn ctermbg=magenta
 
@@ -100,7 +100,7 @@ function! MarkMargin (on)
         unlet b:MarkMargin
     endif
     if a:on
-        let b:MarkMargin = matchadd('ColorColumn', '\%81v', 100)
+        let b:MarkMargin = matchadd('ColorColumn', '\%121v', 100)
     endif
 endfunction
 
