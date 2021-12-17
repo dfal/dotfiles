@@ -1,5 +1,6 @@
 [merge]
 	tool = BeyondCompare4
+	guitool = BeyondCompare4
 [diff]
 	tool = kdiff3
 	guitool = beyondcompare4
