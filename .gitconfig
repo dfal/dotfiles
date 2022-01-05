@@ -1,23 +1,22 @@
-[merge]
-	tool = BeyondCompare4
-	guitool = BeyondCompare4
-[diff]
-	tool = kdiff3
-	guitool = beyondcompare4
-[core]
-	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
-	autocrlf = false
-[difftool "BeyondCompare3"]
-	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
 [user]
 	name = Dmitry Fal
 	email = fal.dmitry@gmail.com
-[difftool "beyondcompare3"]
-	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
-	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
-[mergetool "BeyondCompare3"]
-	path = C:/Program Files (x86)/Beyond Compare 3/bcomp.exe
-	cmd = \"C:/Program Files (x86)/Beyond Compare 3/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+
+[color]
+	ui = auto
+
+[merge]
+	tool = BeyondCompare4
+	guitool = BeyondCompare4
+
+[diff]
+	tool = kdiff3
+	guitool = beyondcompare4
+
+[core]
+	editor = \"C:/Program Files (x86)/GitExtensions/GitExtensions.exe\" fileeditor
+	autocrlf = false
+
 [alias]
 	last = log -1 HEAD
 	cob = "!git checkout -b $1 `git branch -r | grep -m 1 -w $1` #"
@@ -26,19 +25,33 @@
 	glog = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	up = !git pull --rebase --prune $@ && git submodule update --init --recursive
 	cloner = clone --recursive
+	# show list of contributors in descending order by number of commits
+	rank = shortlog -sn --no-merges
 [pull]
 	rebase = true
+
 [fetch]
 	prune = true
+
 [rebase]
-	autoStash = false
+	autoStash = true
+
+[push]
+  # 'git push' will push the current branch to its tracking branch
+  # the usual default is to push all branches
+  default = tracking
+
 [winUpdater]
 	recentlySeenVersion = 2.24.1.windows.2
+
 [uploadpack]
 	allowFilter = true
+
 [difftool "beyondcompare4"]
 	path = C:/Program Files/Beyond Compare 4/bcomp.exe
 	cmd = \"C:/Program Files/Beyond Compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\"
+
 [mergetool "BeyondCompare4"]
 	path = C:/Program Files/Beyond Compare 4/bcomp.exe
 	cmd = \"C:/Program Files/Beyond Compare 4/bcomp.exe\" \"$LOCAL\" \"$REMOTE\" \"$BASE\" \"$MERGED\"
+
